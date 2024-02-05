@@ -4,7 +4,9 @@ Abrir una consola en carpeta clonada.
 
 # Ejecutar los siguiente comandos
 cd Veriflix
+
 npm install
+
 npm run dev
 
 # Las credenciales de Login son
