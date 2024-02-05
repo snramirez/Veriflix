@@ -1,11 +1,9 @@
 <template>
   <v-app-bar :elevation="10">
 
-    <template v-slot:prepend>
-      <v-app-bar-nav-icon></v-app-bar-nav-icon>
-    </template>
-
-    <v-app-bar-title>Veriflix</v-app-bar-title>
+    <v-app-bar-title>
+      <v-btn variant="text" to="/movieboard">Veriflix</v-btn>
+    </v-app-bar-title>
 
     <v-spacer></v-spacer>
     <v-btn 
@@ -13,10 +11,6 @@
         v-if="!user" 
         :to="'/login'">
         <v-icon>mdi-account</v-icon>
-    </v-btn>
-
-    <v-btn>
-        <v-switch label="Daltonico" color="orange"></v-switch>
     </v-btn>
   </v-app-bar>
 </template>
