@@ -1,6 +1,6 @@
 <template>
   <div class="py-10">
-    <v-card class="mx-auto my-12" max-width="450">
+    <v-card class="mx-auto my-12" max-width="450" elevation="16">
       <h1 class="d-flex justify-center pt-8">Inicio de Sesion</h1>
 
       <v-container class="pa-7">
@@ -8,10 +8,10 @@
           ref="form"
           v-model="valid"
           lazy-validation
-          @submit.prevent="submitForm"
+          @submit.prevent="login(credential)"
         >
           <v-text-field
-            v-model="user"
+            v-model="credential.email"
             :rules="userRules"
             label="Usuario"
             required
@@ -19,8 +19,8 @@
 
           <v-text-field
             type="password"
-            v-model="password" 
-            :rules="passwordRules"           
+            v-model="credential.password"
+            :rules="passwordRules"
             label="Contraseña"
             required
           ></v-text-field>
@@ -42,18 +42,25 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref } from "vue";
+import { useAuthStore } from "@/store/useAuthStore";
+import { storeToRefs } from "pinia";
 
-const user = ref('')
-const password = ref('')
-const valid = ref(true)
-const userRules = [(v) => !!v || "El usuario es obligatorio"]
-const passwordRules = [(v) => !!v || "La contraseña es obligatoria"]
+const useAuth = useAuthStore();
+const { authUser, logout, login } = useAuth;
+const { user } = storeToRefs(useAuth);
+const credential = ref({
+  email: "",
+  password: "",
+});
+
+const valid = ref(true);
+const userRules = [(v) => !!v || "El usuario es obligatorio"];
+const passwordRules = [(v) => !!v || "La contraseña es obligatoria"];
 
 const submitForm = () => {
-    console.log("send")
-}
-
+  console.log("send");
+};
 </script>
 
 <style></style>

@@ -1,0 +1,6 @@
+{
+    "API_KEY": "c05d99cb",
+    "API_BASE_URL": "http://www.omdbapi.com/",
+    "PARAM_PLOT": "full",
+    "PARAM_TYPE": "movie"
+}
