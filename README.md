@@ -1,4 +1,6 @@
 # Veriflix
+Proyecto realizado con Vue 3 (composition API, Pinia, Ref)
+
 Para ejecutar la aplicacion.
 Abrir una consola en carpeta clonada.
 
