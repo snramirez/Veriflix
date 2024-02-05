@@ -9,8 +9,10 @@ npm install
 
 npm run dev
 
-# Las credenciales de Login son
+# Las credenciales de Login son:
+
 Usuario: veriflix@verifarma.com
+
 Contraña: verifarma
 
 # Notas:
